@@ -70,7 +70,7 @@ int numGame() {
 	int secret;
 
 	srand(time(NULL));
-	secret = rand() % 1 + 1;
+	secret = rand() % 100 + 1;
 
 	cout << " Choose a number 1 through 100 ";
 	cin >> numChoice;
