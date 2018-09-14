@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
-#include <cmath>
+#include <math.h>
+#include <iomanip>
 using namespace std;
 
 int rightTriangle() {
@@ -8,45 +9,40 @@ int rightTriangle() {
 	float sideA;
 	float sideB;
 	float sideC;
-	cout << " What would you like side A to be? >> ";
+	float area;
+	float perimeter;
+
+	cout << "----------------------------------" << endl;
+	cout << " What would you like side A to be? >> " << endl;
 	cin >> sideA;
-	cout << " What would you like side B to be? >> ";
-	cin >> sideB; 
-	cout << " HYP= "<< sqrt(pow(sideA, 2) = pow(sideB, 2)) <<"Answer.";
+	cout << "----------------------------------" << endl;
+	cout << " What would you like side B to be? >> " << endl;
+	cin >> sideB;
 
+	sideC = sqrt((sideA*sideA) + (sideB*sideB));
+	area = .5 *sideA*sideB;
+	perimeter = sideC + sideB + sideA;
+	
+	cout << fixed << setprecision(2) << " The missing side is " << sideC << endl;
+	cout << fixed << setprecision(2) << " The area is " << area << endl;
+	cout << fixed << setprecision(2) << " The perimeter is " << perimeter << endl;
 
+	
 	system("pause");
 	return 0;
 }
 
-int rightTraingleCalc() {
-	int sideA;
-	int sideB;
-	int sideC;
-	 
-	
-	
 
-		
-
-	return 0;
-}
 int isoceles() {
 
 	return 0;
 }
-int isocelesCalc() {
 
-	return 0;
-}
 int equilateral() {
 
 	return 0;
 }
-int eaquilateralCalc() {
 
-	return 0;
-}
 
 
 
