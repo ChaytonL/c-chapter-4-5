@@ -8,6 +8,7 @@ using namespace std;
 
 int doorGame()
 {
+
 	int userDoorChoice;
 	cout << "------------------------------------------------------" << endl;
 	cout << "---------------- Welcome to my Game ------------------" << endl;
@@ -91,25 +92,31 @@ int numGame() {
 }
 int main()
 {
-	int pickGame = 4;
+	int pickGame = 0;
+	string result;
 
-	do {
-		cout << " Welcome to my Game\n Game 1, Game 2, or Game 3 " << endl;
-		cin >> pickGame;
+	cout << " Welcome to my Game\n Game 1, Game 2, or Game 3 " << endl;
+	cin >> pickGame;
 
-		if (pickGame == 1) {
-			system("cls");
-			doorGame();
-		}
-		else if (pickGame == 2) {
-			system("cls");
-			randomGame();
-		}
-		else if (pickGame == 3) {
-			system("cls");
-			numGame();
-		}
-		system("pause");
-	} while (pickGame != 4);
+	switch (pickGame)
+	{
+
+	case 1:
+		system("cls");
+		doorGame();
+		break;
+	case 2:
+		system("cls");
+		randomGame();
+		break;
+	case 3:
+		system("cls");
+		numGame();
+		break;
+
+	default:
+		result = "Not Valid.";
+	}
+	system("pause");
 	return 0;
 }
