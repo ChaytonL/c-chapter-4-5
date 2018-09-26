@@ -69,33 +69,59 @@ int randomGame() {
 int numGame() {
 	int numChoice;
 	int secret;
+	int count = 1;
 
 	srand(time(NULL));
-	secret = rand() % 100 + 1;
 
-	cout << " Choose a number 1 through 100 ";
+	cout << " Choose a number 1 through 100 >> ";
 	cin >> numChoice;
 
-	if (numChoice == secret) {
-		cout << "---------" << endl;
-		cout << " YOU WON " << endl;
-		cout << "---------" << endl;
-	}
-	else {
-		cout << "----------------" << endl;
-		cout << " YOU LOOSE  " << endl;
-		cout << "----------------" << endl;
-		cout << " The answer was " << secret << endl;
-		cout << "----------------" << endl;
-	}
+	do {
+
+		secret = rand() % 100 + 1;
+
+
+		if (numChoice < secret) {
+			cout << "---------" << endl;
+			cout << " To Low, try again. " << endl;
+			cout << "---------" << endl;
+		}
+		else if (numChoice > secret) {
+			cout << "----------------" << endl;
+			cout << " To High, try again.  " << endl;
+			cout << "----------------" << endl;
+		}
+		else if (numChoice == secret) {
+			cout << " It took " << count << " ammount of tries. ";
+		}
+
+		count = count + 1;
+	} while (numChoice != secret);
+
 	return 0;
 }
-int main()
+
+int forloop() {
+
+	int secret;
+	int number;
+
+	for (int i = 0; i < 10; i++) {
+
+		srand(time(NULL));
+		secret = rand() % 10 + 1;
+
+		cout << secret << endl;
+	}
+
+		return 0;
+}
+	int main()
 {
 	int pickGame = 0;
 	string result;
 
-	cout << " Welcome to my Game\n Game 1, Game 2, or Game 3 " << endl;
+	cout << " Welcome to my Game\n 1 = Door Game\n 2 = RandomGame\n 3 = NumGame\n 4 = ForLoop " << endl;
 	cin >> pickGame;
 
 	switch (pickGame)
@@ -113,6 +139,11 @@ int main()
 		system("cls");
 		numGame();
 		break;
+	case 4:
+		system("cls");
+		forloop();
+		break;
+
 
 	default:
 		result = "Not Valid.";
